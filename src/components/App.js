@@ -12,7 +12,6 @@ function App() {
       fetch('https://beta.adalab.es/curso-intensivo-fullstack-recursos/apis/quotes-friends-tv-v1/quotes.json')
         .then((response) => response.json())
         .then((data) => setQuotes(data))
-        .catch((error) => console.log('Error al obtener los datos:', error));
     };
 
     fetchData();
@@ -30,11 +29,13 @@ function App() {
     setQuoteSearch(event.target.value);
   };
 
-  const filteredQuotes = quotes.filter(
-    (quote) =>
-      (selectedCharacter === '' || quote.character.toLowerCase() === selectedCharacter.toLowerCase()) &&
-      quote.quote.toLowerCase().includes(quoteSearch.toLowerCase())
-  );
+  const filteredQuotes = quotes.filter(quote =>
+  (
+    selectedCharacter === '' ||
+    quote.character.toLowerCase() === selectedCharacter.toLowerCase()
+  ) &&
+  quote.quote.toLowerCase().includes(quoteSearch.toLowerCase())
+);
 
   return (
     <div className="general">
