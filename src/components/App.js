@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import '../services/Api.js';
 import '../styles/App.scss';
 
 function App() {
@@ -38,39 +37,50 @@ function App() {
 );
 
   return (
-    <div className="general">
-      <h1>Frases de Friends</h1>
-      <section className="inputs">
-        <div className="button1">
-          <select value={selectedCharacter} onChange={handleCharacterSelectChange}>
-            <option value="">Todos los personajes</option>
-            <option value="Rachel">Rachel</option>
-            <option value="Ross">Ross</option>
-            <option value="Phoebe">Phoebe</option>
-            <option value="Chandler">Chandler</option>
-            <option value="Monica">Monica</option>
-            <option value="Joey">Joey</option>
-          </select>
-        </div>
-        <div className="button2">
-          <input
-            type="text"
-            value={quoteSearch}
-            onChange={handleQuoteInputChange}
-            placeholder="Buscar frase"
-          />
-          <button onClick={handleQuoteSearch}>Buscar frases</button>
-        </div>
-      </section>
-      <div className="box">
-        {filteredQuotes.map((quote, index) => (
-          <div key={index} className="box_characters">
-            <div className="character">{quote.character}:</div>
-            <div className="quote">{quote.quote}</div>
-          </div>
-        ))}
+  <div className="general">
+  <header>
+    <h1>Frases de Friends</h1>
+  </header>
+  <form>
+    <section className="inputs">
+      <div className="button1">
+        <label htmlFor="characterSelect">Seleccionar personaje:</label>
+        <select id="characterSelect" value={selectedCharacter} onChange={handleCharacterSelectChange}>
+          <option value="">Todos los personajes</option>
+          <option value="Rachel">Rachel</option>
+          <option value="Ross">Ross</option>
+          <option value="Phoebe">Phoebe</option>
+          <option value="Chandler">Chandler</option>
+          <option value="Monica">Monica</option>
+          <option value="Joey">Joey</option>
+        </select>
       </div>
-    </div>
+    </section>
+  </form>
+  <form>
+    <section className="inputs">
+      <div className="button2">
+        <label htmlFor="quoteInput">Buscar frase:</label>
+        <input
+          type="text"
+          id="quoteInput"
+          value={quoteSearch}
+          onChange={handleQuoteInputChange}
+          placeholder="Buscar frase"
+        />
+        <button onClick={handleQuoteSearch}>Buscar frases</button>
+      </div>
+    </section>
+  </form>
+  <div className="box">
+    {filteredQuotes.map((quote, index) => (
+      <div key={index} className="box_characters">
+        <div className="character">{quote.character}:</div>
+        <div className="quote">{quote.quote}</div>
+      </div>
+    ))}
+  </div>
+</div>
   );
 }
 
