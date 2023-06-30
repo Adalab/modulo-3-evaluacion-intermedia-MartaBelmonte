@@ -6,6 +6,10 @@ function App() {
   const [selectedCharacter, setSelectedCharacter] = useState('');
   const [quoteSearch, setQuoteSearch] = useState('');
 
+  const [newQuote, setNewQuote] = useState('');
+  const [newCharacter, setNewCharacter] = useState('');
+
+
   useEffect(() => {
     const fetchData = () => {
       fetch('https://beta.adalab.es/curso-intensivo-fullstack-recursos/apis/quotes-friends-tv-v1/quotes.json')
@@ -35,6 +39,26 @@ function App() {
   ) &&
   quote.quote.toLowerCase().includes(quoteSearch.toLowerCase())
 );
+
+  const handleNewQuoteChange = (event) => {
+    setNewQuote(event.target.value);
+  };
+
+  const handleNewCharacterChange = (event) => {
+    setNewCharacter(event.target.value);
+  };
+
+  const handleAddQuote = () => {
+  const newQuoteObject = {
+    quote: newQuote,
+    character: newCharacter,
+  };
+
+  setQuotes([...quotes, newQuoteObject]);
+  setNewQuote('');
+  setNewCharacter('');
+};
+
 
   return (
   <div className="general">
@@ -80,6 +104,31 @@ function App() {
       </div>
     ))}
   </div>
+  <form>
+  <section className="inputs-container">
+  <label htmlFor="newQuoteInput">Frase:</label>
+  <input
+    type="text"
+    id="newQuoteInput"
+    value={newQuote}
+    onChange={handleNewQuoteChange}
+    placeholder="Introduce una nueva frase"
+  />
+
+  <label htmlFor="newCharacterInput">Personaje:</label>
+  <input className='input-character'
+    type="text"
+    id="newCharacterInput"
+    value={newCharacter}
+    onChange={handleNewCharacterChange}
+    placeholder="Introduce el nombre del personaje"
+  />
+
+  <button type="button" onClick={handleAddQuote}>
+    Añadir frase
+  </button>
+</section>
+</form>
 </div>
   );
 }
