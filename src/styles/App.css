@@ -1,0 +1,158 @@
+.general {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.inputs label {
+  font-size: 1.2em;
+
+}
+
+.inputs select,
+.inputs input {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* Nuevo espacio inferior */
+}
+
+/* Cambios en la disposición de los elementos en la sección "inputs" */
+.inputs .button-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* Nuevo espacio superior e inferior para el contenedor */
+}
+
+.inputs button {
+  width: 200px;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.inputs button:hover {
+  background-color: #45a049;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.box_characters {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.character {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centra los elementos horizontalmente */
+  margin: 20px;
+  padding: 20px;
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inputs-container label {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.inputs-container input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.inputs-container button {
+  width: 100%;
+  max-width: 250px;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+}
+
+
+/* Ajuste del ancho de los inputs de búsqueda de personajes y frases */
+.inputs-container .search-box input {
+  width: 50%;
+  /* Ancho reducido */
+  margin-right: 10px;
+  /* Espacio entre los inputs */
+}
+
+.inputs-container .search-box button {
+  width: 50%;
+  /* Ancho reducido */
+}
+
+/* Doble ancho para el cuadrado de búsqueda al final */
+.inputs-container .add-box {
+  width: 200%;
+  margin-bottom: 20px;
+}
+
+.inputs-container .add-box input,
+.inputs-container .add-box button {
+  width: 100%;
+  /* Ancho total para los inputs y el botón */
+}
+
+.button1, .button2 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.insert {
+  padding: 60px 0 20px 0;
+  
+}
+
+
+
+
